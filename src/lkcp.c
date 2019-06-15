@@ -29,7 +29,7 @@
 #include <lua.h>
 #include <lauxlib.h>
 
-#include "ikcp.h"
+#include "../kcp/ikcp.h"
 
 #define RECV_BUFFER_LEN 4*1024*1024
 

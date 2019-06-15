@@ -1,14 +1,9 @@
-.PHONY: all
-
-TOP=$(PWD)
 LUADIR = /usr/local/src/lua-5.3.0/src
-KCP_SRC=$(TOP)/kcp
-SRC=$(TOP)/src
+KCP_SRC=./kcp
+SRC=./src
 
 CFLAGS = -g3 -O2 -rdynamic -Wall -I$(LUADIR) 
 SHARED = -fPIC --shared
 
-all: lkcp.so
-
-lkcp.so: $(SRC)/lkcp.c  $(KCP_SRC)/ikcp.c $(KCP_SRC)/ikcp.h
+lkcp.so: $(SRC)/lkcp.c  $(KCP_SRC)/ikcp.c
 	gcc $(CFLAGS) $(SHARED) $^ -o $@
